@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "crates/ui-framework",
+  "crates/ui",
+  "crates/daily-planner"
+]
