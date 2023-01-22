@@ -5,4 +5,5 @@ edition = "2021"
 
 [dependencies]
 ui-framework = {path = "../ui-framework"}
+raw-gl-context = "0.1.2"
 winit = "0.27.5"

@@ -1,4 +1,5 @@
 use winit::{event_loop::EventLoop, dpi::LogicalSize, window::WindowBuilder, event::Event};
+use ui_framework::UI;
 
 // Runs the native application
 pub fn run_app() {
@@ -9,6 +10,8 @@ pub fn run_app() {
     .with_inner_size(LogicalSize::new(1280, 720))
     .build(&event_loop)
     .unwrap();
+
+  let ui = UI::init(&wnd);
 
   event_loop.run(move |event, _, control_flow| {
     control_flow.set_wait();
@@ -26,7 +29,7 @@ pub fn run_app() {
       },
 
       Event::RedrawRequested(_) => {
-        // TODO: rendering
+        ui.render();
       }
 
       _ => {}
